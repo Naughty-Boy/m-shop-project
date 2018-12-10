@@ -1,5 +1,12 @@
 // 导入Vue包
 import Vue from 'vue'
+//导入vue-router包
+import VueRouter from 'vue-router'
+//安装路由
+Vue.use(VueRouter)
+// 导入自己的vue-router模块
+import router from './router.js'
+//导入容器组件
 import app from './app.vue'
 
 // 导入mui的样式
@@ -16,5 +23,7 @@ var vm=new Vue({
     el:'#app',
     render:function(createElements){
         return createElements(app);
-    }
+    },
+    //挂在路由对象
+    router:router
 }) 
