@@ -4,26 +4,32 @@ import HomeContainer from './components/tabbar/HomeContainer.vue'
 import OwnContainer from './components/tabbar/OwnContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 import ShopcartContainer from './components/tabbar/ShopcartContainer.vue'
-var router=new VueRouter({
-    routes:[
-        {
-            path:'/',
-            redirect:'/home'
+//导入其他组件
+import NewsList from './components/news/NewsList.vue'
+var router = new VueRouter({
+    routes: [{
+            path: '/',
+            redirect: '/home'
         },
         {
-            path:'/home',
-            component: HomeContainer
+            path: '/home',
+            component: HomeContainer,
         },
         {
-            path:'/search',
+            path: '/search',
             component: SearchContainer
         },
         {
-            path:'/shopcart',
+            path: '/shopcart',
             component: ShopcartContainer
-        },{
-            path:'/own',
+        }, {
+            path: '/own',
             component: OwnContainer
+        },
+        //新闻资讯
+        {
+            path: '/home/news',
+            component: NewsList
         }
     ],
     linkActiveClass: 'mui-active'

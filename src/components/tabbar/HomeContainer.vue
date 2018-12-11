@@ -9,38 +9,38 @@
     <!-- 小图标区域 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
-        <a href="#">
-          <img src="../../images/menu1.png" >
-          <div class="mui-media-body">Home</div>
-        </a>
+        <router-link to="/home/news">
+          <img src="../../images/menu1.png">
+          <div class="mui-media-body">新闻</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
-          <img src="../../images/menu2.png" >
+          <img src="../../images/menu2.png">
           <div class="mui-media-body">Email</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
-          <img src="../../images/menu3.png" >
+          <img src="../../images/menu3.png">
           <div class="mui-media-body">Chat</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
-         <img src="../../images/menu4.png" >
+          <img src="../../images/menu4.png">
           <div class="mui-media-body">location</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
-          <img src="../../images/menu5.png" >
+          <img src="../../images/menu5.png">
           <div class="mui-media-body">Search</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
-          <img src="../../images/menu6.png" >
+          <img src="../../images/menu6.png">
           <div class="mui-media-body">Phone</div>
         </a>
       </li>
@@ -59,7 +59,6 @@ export default {
       this.$http
         .get("http://www.liulongbin.top:3005/api/getlunbo")
         .then(function(res) {
-          console.log(res);
           this.imgList = res.body.message;
         });
     }
@@ -78,14 +77,14 @@ export default {
   }
 }
 .mui-table-view.mui-grid-view {
-    background-color: white;
+  background-color: white;
+  border: none;
+  & > li {
     border: none;
-    & >li {
-        border: none;
-        img {
-            width: 60px;
-        }
+    img {
+      width: 60px;
     }
+  }
 }
 </style>
 
