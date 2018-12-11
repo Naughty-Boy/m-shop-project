@@ -4,6 +4,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 //安装路由
 Vue.use(VueRouter)
+//导入vue-resource
+import VueResource from 'vue-resource'
+//安装VueResource
+Vue.use(VueResource)
 // 导入自己的vue-router模块
 import router from './router.js'
 //导入容器组件
@@ -12,11 +16,13 @@ import app from './app.vue'
 // 导入mui的样式
 import './lib/mui/css/mui.min.css'
 //按需引入mint-ui提供的组件
-import {Header} from 'mint-ui'
+import {Header,Swipe, SwipeItem} from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './lib/mui/css/icons-extra.css'
 // 引入后需要声明为全局组件，可以让别的组件来使用
 Vue.component(Header.name,Header)
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 // 构造Vue实例
 var vm=new Vue({
@@ -24,6 +30,6 @@ var vm=new Vue({
     render:function(createElements){
         return createElements(app);
     },
-    //挂在路由对象
+    //挂载路由对象
     router:router
 }) 
