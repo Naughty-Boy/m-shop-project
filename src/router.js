@@ -4,8 +4,9 @@ import HomeContainer from './components/tabbar/HomeContainer.vue'
 import OwnContainer from './components/tabbar/OwnContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 import ShopcartContainer from './components/tabbar/ShopcartContainer.vue'
-//导入其他组件
+//新闻组件
 import NewsList from './components/news/NewsList.vue'
+import NewsDetail from './components/news/NewsDetail.vue'
 var router = new VueRouter({
     routes: [{
             path: '/',
@@ -30,6 +31,9 @@ var router = new VueRouter({
         {
             path: '/home/news',
             component: NewsList
+        },{
+            path:'/home/newsDetail/:id',
+            component:NewsDetail
         }
     ],
     linkActiveClass: 'mui-active'

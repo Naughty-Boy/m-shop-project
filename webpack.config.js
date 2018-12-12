@@ -34,6 +34,10 @@ module.exports = {
         }, {
             test: /\.(otf|eot|svg|ttf|woff|woff2)$/,
             use: 'url-loader'
+        },{
+            test:/\.js$/,
+            use:"babel-loader",
+            exclude:/node_modules/
         }]
     },
     plugins: [

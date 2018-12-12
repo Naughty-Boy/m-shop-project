@@ -57,7 +57,7 @@ export default {
   methods: {
     getLoopImg: function() {
       this.$http
-        .get("http://www.liulongbin.top:3005/api/getlunbo")
+        .get("api/getlunbo")
         .then(function(res) {
           this.imgList = res.body.message;
         });

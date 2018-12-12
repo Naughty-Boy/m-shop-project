@@ -4,7 +4,7 @@
     <mt-header fixed title="IGO商城"></mt-header>
     <!-- 中间router-view区域 -->
     <transition>
-          <router-view></router-view>
+      <router-view></router-view>
     </transition>
     <!-- 底部tabbar区域 -->
     <nav class="mui-bar mui-bar-tab">
@@ -33,8 +33,12 @@
 </script>
 
 <style lang="less">
+body {
+  background-color: white!important;
+}
 .app-container {
   padding-top: 40px;
+  padding-bottom: 50px;
   overflow-x: hidden;
 }
 .v-enter,
@@ -46,9 +50,9 @@
 .v-leave-to {
   transform: translateX(-100%);
 }
-.v-enter-active ,
+.v-enter-active,
 .v-leave-active {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 </style>
 
