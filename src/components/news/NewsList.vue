@@ -32,7 +32,7 @@ export default {
           console.log(res)
         },
         function(err) {
-          let instance = Toast("提示信息");
+          let instance = Toast("获取失败~");
           setTimeout(() => {
             instance.close();
             location.href = location.pathname + "#/home";

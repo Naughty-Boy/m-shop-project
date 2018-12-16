@@ -1,11 +1,7 @@
 <template>
   <div>
     <!-- 轮播图区域 -->
-    <mt-swipe :auto="4000" class="loop-item">
-      <mt-swipe-item v-for="item in imgList" :key="item.id">
-        <img :src="item.img">
-      </mt-swipe-item>
-    </mt-swipe>
+    <loop-img :imgList="imgList"></loop-img>
     <!-- 小图标区域 -->
     <ul class="mui-table-view mui-grid-view mui-grid-9">
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
@@ -15,16 +11,16 @@
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
-        <a href="#">
+        <router-link to="/home/share">
           <img src="../../images/menu2.png">
-          <div class="mui-media-body">Email</div>
-        </a>
+          <div class="mui-media-body">分享</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
-        <a href="#">
+        <router-link to="/home/productList">
           <img src="../../images/menu3.png">
-          <div class="mui-media-body">Chat</div>
-        </a>
+          <div class="mui-media-body">商品</div>
+        </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
@@ -48,6 +44,8 @@
   </div>
 </template>
 <script>
+// 导入轮播图组件
+import loopImg from '../subComponents/LoopImg.vue'
 export default {
   data: function() {
     return {
@@ -65,17 +63,13 @@ export default {
   },
   created: function() {
     this.getLoopImg();
+  },
+  components:{
+    loopImg
   }
 };
 </script>
 <style lang="less" scoped>
-.loop-item {
-  height: 200px;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
 .mui-table-view.mui-grid-view {
   background-color: white;
   border: none;

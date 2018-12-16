@@ -50,7 +50,7 @@ export default {
           },
           function(err) {
             Toast({
-              message: "获取数据失败了~",
+              message: "获取评论数据失败了~",
               position: "middle",
               duration: 2000
             });
@@ -79,7 +79,10 @@ export default {
           {}
         )
         .then(function(res) {
-            location.reload();
+          // 直接刷新页面不能保证很好的交互性，并且不能保留当前浏览的页数
+            // location.reload();
+            // 自己模拟一个对象进行添加
+            this.commentList.unshift({user_name:"匿名用户",add_time:new Date(),content:this.content});
           if (res.body.status == 0) {
               this.content='';
             Toast({
