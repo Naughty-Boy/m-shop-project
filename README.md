@@ -4,7 +4,7 @@
 
 > 搭配移动端的mui框架进行开发
 
-##遇到的问题
+## 遇到的问题
 
 - 在引入mui.js时出现引用类型错误，原因是在webpack打包时启动的是严格模式，导致无法引用'caller', 'callee', and 'arguments'。
 
