@@ -7,7 +7,7 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <router-link to="/home/news">
           <img src="../../images/menu1.png">
-          <div class="mui-media-body">新闻</div>
+          <div class="mui-media-body">资讯</div>
         </router-link>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
@@ -25,19 +25,19 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
           <img src="../../images/menu4.png">
-          <div class="mui-media-body">location</div>
+          <div class="mui-media-body">分类</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
           <img src="../../images/menu5.png">
-          <div class="mui-media-body">Search</div>
+          <div class="mui-media-body">推荐</div>
         </a>
       </li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4">
         <a href="#">
           <img src="../../images/menu6.png">
-          <div class="mui-media-body">Phone</div>
+          <div class="mui-media-body">主题</div>
         </a>
       </li>
     </ul>
@@ -49,20 +49,27 @@ import loopImg from '../subComponents/LoopImg.vue'
 export default {
   data: function() {
     return {
-      imgList: []
+      imgList: [{
+        img:'./images/loop1.jpg'
+      },{
+        img:'./images/loop2.jpg'
+      },{
+        img:'./images/loop3.jpg'
+      }]
     };
   },
-  methods: {
-    getLoopImg: function() {
-      this.$http
-        .get("api/getlunbo")
-        .then(function(res) {
-          this.imgList = res.body.message;
-        });
-    }
-  },
+  // methods: {
+    // 失效
+    // getLoopImg: function() {
+      // this.$http
+      //   .get("api/getloop")
+      //   .then(function(res) {
+      //     this.imgList = res.body.message;
+      //   });
+    // }
+  // },
   created: function() {
-    this.getLoopImg();
+    // this.getLoopImg();
   },
   components:{
     loopImg
