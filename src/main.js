@@ -70,6 +70,48 @@ var store=new Vuex.Store({
             }
             //在购物车列表发生变化时，进行本地存储达到数据持久化
             localStorage.setItem('shopCart',JSON.stringify(state.shopCart));
+        },
+        countPlus:function(state,id){
+            state.shopCart.forEach(item=>{
+                if(item.id==id){
+                    if(item.count==item.maxCount){
+                        return;
+                    }else{
+                        item.count++;
+                        localStorage.setItem('shopCart',JSON.stringify(state.shopCart));
+                    }
+                }
+            })
+        },
+        countReduce:function(state,id){
+            state.shopCart.forEach(item=>{
+                if(item.id==id){
+                    if(item.count==1){
+                        return;
+                    }else{
+                        item.count--;
+                        localStorage.setItem('shopCart',JSON.stringify(state.shopCart));
+                    }
+                }
+            })
+        },
+        //处理商品状态的改变
+        selectChange:function(state,id){
+            state.shopCart.forEach(item=>{
+                if(item.id==id){
+                    item.sure=!item.sure;
+                    localStorage.setItem('shopCart',JSON.stringify(state.shopCart));
+                }
+            })
+        },
+        // 删除购物车中的商品
+        removeProduct:function(state,id){
+            state.shopCart.forEach((item,index)=>{
+                if(item.id==id){
+                    state.shopCart.splice(index,1);
+                    localStorage.removeItem('shopCart');
+                }
+            })
         }
     },
     getters:{
@@ -79,6 +121,21 @@ var store=new Vuex.Store({
                 count+=item.count;
 
             })
+            return count;
+        },
+        //根据id获取当前选择状态
+        getSelectResult:function(state,obj){
+            var result={};
+            state.shopCart.forEach(item=>{
+                    result[item.id]=item.sure;
+            })
+            return result;
+        },
+        getCountForId:function(state){
+            var count={};
+            state.shopCart.forEach(item=>{
+                count[item.id]=item.count;
+            });
             return count;
         }
     }

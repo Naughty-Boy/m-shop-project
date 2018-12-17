@@ -132,11 +132,11 @@ body {
 .v-enter,
 .v-leave-to {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateY(100%);
   position: absolute;
 }
 .v-leave-to {
-  transform: translateX(-100%);
+  transform: translateY(-100%);
 }
 .v-enter-active,
 .v-leave-active {

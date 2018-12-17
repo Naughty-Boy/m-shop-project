@@ -134,6 +134,7 @@ export default {
         id: this.id,
         price: this.sell_price,
         count: this.buyCount,
+        maxCount: this.stock_quantity,
         sure: true
       };
       //调用vuex中的添加购物车方法
